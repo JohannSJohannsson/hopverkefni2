@@ -1,5 +1,35 @@
 # Hópverkefni 2
 
+# Hvernig keyra skal verkefnið:
+
+* Fyrst skal gengið úr skugga um að git sé installað í tölvinnu.
+
+* Næst skal gera nýtt local repository með því að búa til nýja möppu, opna git í þeirri möppu og skrifa inn skipunina "git clone" og vísa í eftirfarandi slóð: 
+    
+    ```bash
+    https://github.com/JohannSJohannsson/hopverkefni2
+
+* Þá skal opna möppuna inni í Visual studio code eða öðru svipuðu forriti.
+
+* Svo þarf að setja upp nodejs (ef það er ekki nú þegar sett inn) af þessari slóð: https://nodejs.org/en/, annað hvort nýjustu útgáfu eða útgáfu 8.12.0.
+
+* Til að keyra forritin í möppunni skal slá inn eftirfarandi skipanir:
+
+    ```bash
+    npm install
+    npm run dev
+
+* Ef það virkar ekki að install-a einhverjum af þeim forritum sem eru í devDependencies í package.json skal prófa að skoða villur í git ná í global útgáfu af því forriti sem vantar og run-a svo dev aftur.
+
+* Við mælum með að bæta við stylelint og eslint extension í Visual studio code.
+
+* Ef ekki er notað eslint eða stylelint extension er hægt að villuprófa með skipuninni:
+
+    ```bash
+    npm test -s
+
+
+# Verkefnalýsing frá kennara:
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
 Gefnar eru [fyrirmyndir](utlit/) í `500px` og `1500px` án grindar ásamt `1500px` með grind. Allt efni skal skalast snyrtilega á milli.
