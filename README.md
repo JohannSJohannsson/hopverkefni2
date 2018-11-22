@@ -18,6 +18,7 @@
     ```bash
     npm install
     npm run dev
+    npm test (keyrir eslint og stylelint)
 
 * Ef það virkar ekki að install-a einhverjum af þeim forritum sem eru í devDependencies í package.json skal prófa að skoða villur í git ná í global útgáfu af því forriti sem vantar og run-a svo dev aftur.
 
