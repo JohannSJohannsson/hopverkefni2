@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  justify-content: center;
+  padding: 0 $gutter;
+
+  &__content {
+    display: flex;
+    max-width: $max-width;
+    justify-content: center;
+  }
+
+  &__button {
+    display: flex;
+    width: 25%;
+    padding: $gutter;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}

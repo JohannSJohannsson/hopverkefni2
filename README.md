@@ -2,7 +2,7 @@
 
 # Hvernig keyra skal verkefnið:
 
-* Fyrst skal gengið úr skugga um að git sé installað í tölvinnu.
+* Fyrst skal gengið úr skugga um að git sé installað í tölvunni.
 
 * Næst skal gera nýtt local repository með því að búa til nýja möppu, opna git í þeirri möppu og skrifa inn skipunina "git clone" og vísa í eftirfarandi slóð: 
     
