@@ -1,7 +1,10 @@
 .section {
   display: flex;
-  justify-content: center;
+  max-width: 1200px;
   padding: 0 $gutter;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
 
   &__content {
     display: flex;
@@ -15,5 +18,39 @@
     padding: $gutter;
     justify-content: space-around;
     flex-direction: row;
+  }
+}
+
+.lectures {
+  display: flex;
+
+  &__row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  &__col {
+    display: flex;
+    //width: 33%;
+    padding-bottom: 20px;
+    flex-direction: column;
+  }
+
+  &__background {
+    z-index: -1;
+  }
+
+  &__banner {
+    background: $color-3;
+  }
+
+  &__banner p {
+    padding: 8px;
+  }
+
+  &__banner h2 {
+    padding: 0 8px 8px;
   }
 }
