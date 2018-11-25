@@ -1,6 +1,6 @@
 .header { /* stylelint-disable-line */
   display: flex;
-  height: 50vh;
+  height: 20vw;
   margin-bottom: $gutter * 2;
   background-image: url("../../img/header.jpg");
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 
   &__title {
     margin-bottom: $gutter;
-    font-size: 3.75rem;
+    font-size: 3rem;
     font-weight: 600;
     text-align: center;
   }
