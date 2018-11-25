@@ -18,11 +18,11 @@
 }
 
 /* Styling */
-html {
+html { /* stylelint-disable-line */
   position: relative;
 }
 
-html::before {
+html::before { /* stylelint-disable-line */
   position: absolute;
   top: 0;
   right: 0;

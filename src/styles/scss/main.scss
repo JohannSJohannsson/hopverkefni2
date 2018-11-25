@@ -16,9 +16,9 @@
 
   &__button {
     display: flex;
-    width: 25%;
-    padding: $gutter;
-    justify-content: space-around;
+    width: 100%;
+    max-width: 440px;
+    justify-content: space-between;
     flex-direction: row;
   }
 
@@ -28,14 +28,13 @@
 }
 
 .lectures {
-  display: flex;
-  margin-right: -10px;
-  margin-left: -10px;
+  margin-right: $gutter/-2;
+  margin-left: $gutter/-2;
 
   &__row {
     display: flex;
     width: 100%;
-    padding-top: 30px;
+    padding-top: $gutter*2;
     flex-wrap: wrap;
     flex-direction: column;
 
@@ -47,15 +46,15 @@
   &__row :nth-child(2),
   &__row :nth-child(8),
   &__row :nth-child(12) {
-    background: $color-3;
+    background: $color-4;
     background-clip: content-box;
   }
 
   &__col {
     display: flex;
-    padding-right: 10px;
-    padding-bottom: 30px;
-    padding-left: 10px;
+    padding-right: $gutter/2;
+    padding-bottom: $gutter*2;
+    padding-left: $gutter/2;
     flex-direction: column;
 
     @media (min-width: 500px) {
@@ -72,20 +71,17 @@
     margin-bottom: -4px;
   }
 
-  &__background {
-    z-index: -1;
-  }
-
   &__banner {
     font-family: $font-head;
-    background: $color-3;
+    background: $color-4;
   }
 
   &__chapter {
-    padding: 8px;
+    padding: $gutter/2;
+    font-weight: 700;
   }
 
   &__title {
-    padding: 0 8px 8px;
+    padding: 0 $gutter/2 $gutter/2;
   }
 }
