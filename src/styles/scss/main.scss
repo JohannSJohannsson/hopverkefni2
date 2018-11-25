@@ -2,8 +2,11 @@
 
 .section {
   display: flex;
-  justify-content: center;
+  max-width: 1200px;
   padding: 0 $gutter;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
 
   &__content {
     display: flex;
@@ -17,5 +20,72 @@
     padding: $gutter;
     justify-content: space-around;
     flex-direction: row;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+}
+
+.lectures {
+  display: flex;
+  margin-right: -10px;
+  margin-left: -10px;
+
+  &__row {
+    display: flex;
+    width: 100%;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media (min-width: 500px) {
+      flex-direction: row;
+    }
+  }
+
+  &__row :nth-child(2),
+  &__row :nth-child(8),
+  &__row :nth-child(12) {
+    background: $color-3;
+    background-clip: content-box;
+  }
+
+  &__col {
+    display: flex;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    flex-direction: column;
+
+    @media (min-width: 500px) {
+      width: 50%;
+      justify-content: flex-end;
+    }
+
+    @media (min-width: 1000px) {
+      width: 33.3333%;
+    }
+  }
+
+  &__image {
+    margin-bottom: -4px;
+  }
+
+  &__background {
+    z-index: -1;
+  }
+
+  &__banner {
+    font-family: $font-head;
+    background: $color-3;
+  }
+
+  &__chapter {
+    padding: 8px;
+  }
+
+  &__title {
+    padding: 0 8px 8px;
   }
 }
