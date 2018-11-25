@@ -33,6 +33,7 @@
   &__row {
     display: flex;
     width: 100%;
+    padding-top: 30px;
     flex-wrap: wrap;
     flex-direction: column;
 
@@ -51,7 +52,7 @@
   &__col {
     display: flex;
     padding-right: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     padding-left: 10px;
     flex-direction: column;
 
@@ -61,8 +62,12 @@
     }
 
     @media (min-width: 1000px) {
-      width: 33.3%;
+      width: 33.3333%;
     }
+  }
+
+  &__image {
+    margin-bottom: -4px;
   }
 
   &__background {
