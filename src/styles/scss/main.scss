@@ -27,6 +27,10 @@
   }
 }
 
+.lectures a {  /* stylelint-disable-line */
+  text-decoration: none;
+}
+
 .lectures {
   margin-right: $gutter/-2;
   margin-left: $gutter/-2;
@@ -84,4 +88,5 @@
   &__title {
     padding: 0 $gutter/2 $gutter/2;
   }
+
 }
