@@ -7,6 +7,7 @@
   background-size: cover;
 
   &__content {
+    z-index: 1;
     display: flex;
     max-width: $max-width;
     margin: auto;
@@ -32,6 +33,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
+    height: inherit;
     background-color: rgba(255, 255, 255, 0.4);
   }
 }
