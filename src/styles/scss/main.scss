@@ -47,11 +47,13 @@
     }
   }
 
-  &__row :nth-child(2),
-  &__row :nth-child(8),
-  &__row :nth-child(12) {
+  &__empty {
+    height: 100%;
     background: $color-4;
-    background-clip: content-box;
+  }
+
+  &__link {
+    display: contents;
   }
 
   &__col {
@@ -77,6 +79,7 @@
 
   &__banner {
     font-family: $font-head;
+    color: #000;
     background: $color-4;
   }
 
