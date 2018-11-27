@@ -34,7 +34,7 @@ function add(data) {
     const col = document.createElement('div');
     col.setAttribute('class', 'lectures__col');
     const link = document.createElement('a');
-    link.setAttribute('href', 'fyrirlestur.html');
+    link.setAttribute('href', `fyrirlestur.html?slug=${data.lectures[i].slug}`);
     const image = document.createElement('div');
     image.setAttribute('class', 'lectures__image');
     const img = document.createElement('img');
@@ -53,8 +53,6 @@ function add(data) {
     title.setAttribute('class', 'lectures__title');
     const tit = document.createTextNode(data.lectures[i].title);
     title.appendChild(tit);
-
-
     row.appendChild(col);
     col.appendChild(link);
     link.appendChild(image);
