@@ -28,6 +28,7 @@
 }
 
 .lectures a {  /* stylelint-disable-line */
+  display: contents;
   text-decoration: none;
 }
 
@@ -45,11 +46,6 @@
     @media (min-width: 500px) {
       flex-direction: row;
     }
-  }
-
-  &__empty {
-    height: 100%;
-    background: $color-4;
   }
 
   &__link {
@@ -74,7 +70,9 @@
   }
 
   &__image {
+    height: 100%;
     margin-bottom: -4px;
+    background: $color-4;
   }
 
   &__banner {
