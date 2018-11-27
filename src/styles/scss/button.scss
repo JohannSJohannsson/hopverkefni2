@@ -1,15 +1,16 @@
-.button {
-  display: inline-block;
+@import "../config";
 
-  width: 100%;
+.button {
+  display: flex;
+
   max-width: 250px;
-  padding: 10px 100px;
+  padding: $gutter/2 $gutter;
   margin: 0;
 
-  font-family: $font-main;
-  font-size: 1rem;
+  font-family: $font-head;
+  font-size: 24px;
+  font-weight: 700;
 
-  color: #000;
   text-align: center;
   text-decoration: none;
 
@@ -18,7 +19,7 @@
   background-color: $color-4;
 
   border: 1px solid $color-4;
-  border-radius: 4px;
+  border-radius: 10px;
 
   transition:
     color $transition,
@@ -26,8 +27,8 @@
     border-color $transition;
 
   &:hover {
-    color: $color-4;
-    background-color: $color-5;
+    color: #000;
+    background-color: $color-3;
     border-color: $color-2;
   }
 }
