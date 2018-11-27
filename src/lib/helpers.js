@@ -1,8 +1,13 @@
+<<<<<<< HEAD
+=======
+// eslint-disable-next-line import/prefer-default-export
+>>>>>>> 60c63589d7aee4c3e89209a60c461e182b953cb6
 export function empty(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 }
+<<<<<<< HEAD
 
 export function el(name, ...children) {
   const element = document.createElement(name);
@@ -19,3 +24,5 @@ export function el(name, ...children) {
 
   return element;
 }
+=======
+>>>>>>> 60c63589d7aee4c3e89209a60c461e182b953cb6
