@@ -65,50 +65,87 @@ function createMain(data) {
       for (let x = 0; i < data.lectures.length; x += 1) {
         const content = data.lectures[i].content; /* eslint-disable-line */
         let content1 = '';
+        let content2 = '';
         let cdlist = '';
         let cid = '';
+        let cattr = '';
+        let caption = '';
         let video = '';
+        let txt = '';
         switch (content[x].type) {
           case 'youtube':
             content1 = document.createElement('div');
-            content1.setAttribute('class', 'iframe');
+            content1.setAttribute('class', 'iframe__container');
             video = document.createElement('iframe');
+            video.setAttribute('class', 'iframe__video');
             video.setAttribute('frameborder', 0);
             video.setAttribute('allowfullscreen', 0);
             video.setAttribute('src', content[x].data);
             content1.appendChild(video);
             break;
           case 'text':
-            content1 = document.createElement('p');
-            cid = document.createTextNode(content[x].data);
-            content1.appendChild(cid);
+            content1 = document.createElement('div');
+            content1.setAttribute('class', 'efni__texti');
+            txt = (content[x].data).split("\n");
+            console.log(txt);
+            for(let i = 0; i < txt.length; i += 1) {
+              content2 = document.createElement('p');
+              content2.setAttribute('class', 'texti');
+              content1.appendChild(content2);
+              cid = document.createTextNode(txt[i]);
+              content2.appendChild(cid);
+            }
+            
             break;
           case 'quote':
             content1 = document.createElement('blockquote');
+            content1.setAttribute('class', 'efni__bquote');
             cid = document.createTextNode(content[x].data);
-            content1.appendChild(cid);
+            if(content[x].attribute) {
+              cattr = document.createElement('cite');
+              cattr.setAttribute('class', 'efni__bquote__cite')
+              content1.appendChild(cid);
+              content1.appendChild(document.createElement('br'))
+              content1.appendChild(cattr);
+              cattr.appendChild(document.createTextNode(content[x].attribute));
+            } else {
+              content1.appendChild(cid);
+            }
             break;
           case 'heading':
             content1 = document.createElement('h2');
+            content1.setAttribute('class', 'efni__heading')
             cid = document.createTextNode(content[x].data);
             content1.appendChild(cid);
             break;
           case 'list':
             content1 = document.createElement('ul');
+            content1.setAttribute('class', 'efni__list')
             for (let l = 0; l < content[x].data.length; l += 1) {
               cdlist = document.createElement('li');
+              cdlist.setAttribute('class', 'efni__list__link')
               const cd = document.createTextNode(content[x].data[l]);
               cdlist.appendChild(cd);
               content1.appendChild(cdlist);
             }
             break;
           case 'image':
-            content1 = document.createElement('img');
-            content1.setAttribute('src', content[x].data);
+            content1 = document.createElement('div');
+            content1.setAttribute('class', 'efni__img')
+            content2 = document.createElement('img');
+            content2.setAttribute('src', content[x].data);
+            content1.appendChild(content2);
+            if(content[x].caption) {
+              caption = document.createElement('figcaption');
+              caption.setAttribute('class', 'efni__img__caption')
+              content1.appendChild(caption);
+              caption.appendChild(document.createTextNode(content[x].caption));
+            }
 
             break;
           case 'code':
             content1 = document.createElement('code');
+            content1.setAttribute('class', 'efni__code')
             cid = document.createTextNode(content[x].data);
             content1.appendChild(cid);
             break;
