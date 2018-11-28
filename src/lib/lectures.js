@@ -36,7 +36,12 @@ function createContent(data) {
       if (slug == data.lectures[i].slug) {
         const header = document.querySelector('.header');
         const content = document.querySelector('.header__content');
-        header.setAttribute('style', `background-image: url(../${  data['lectures'][i].image  })`);
+        if (data.lectures[i].image) {
+            header.setAttribute('style', `background-image: url(../${  data['lectures'][i].image  })`);
+        }
+        else {
+            header.setAttribute('style', `background-color: #999`);
+        }
         const smalltext = document.createElement('p');
         smalltext.setAttribute('class', 'header__smalltext');
         const smltxt = document.createTextNode(data.lectures[i].category);
