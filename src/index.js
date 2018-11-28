@@ -1,5 +1,6 @@
 import List from './lib/list';
 import Lectures from './lib/lectures';
+import Buttons from './lib/button';
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
@@ -10,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lectures.load();
   } else {
     const list = new List();
+    const button = new Buttons();
+    button.createButtoncolor();
     list.load();
   }
 });
