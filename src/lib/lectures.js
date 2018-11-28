@@ -71,7 +71,7 @@ function createMain(data) {
         switch (content[x].type) {
           case 'youtube':
             content1 = document.createElement('div');
-            content1.setAttribute('class', 'iframe');
+            content1.setAttribute('class', 'iframe__container');
             video = document.createElement('iframe');
             video.setAttribute('frameborder', 0);
             video.setAttribute('allowfullscreen', 0);
