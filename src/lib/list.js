@@ -14,7 +14,7 @@ export default class List {
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const myArr = JSON.parse(this.responseText);
-        console.log(myArr.lectures);  /* eslint-disable-line */
+        console.log(myArr.lectures);
         add(myArr);  /* eslint-disable-line */
       }
     };

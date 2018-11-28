@@ -67,12 +67,16 @@ function createMain(data) {
         let content1 = '';
         let cdlist = '';
         let cid = '';
+        let video = '';
         switch (content[x].type) {
           case 'youtube':
-            content1 = document.createElement('iframe');
-            content1.setAttribute('frameborder', 0);
-            content1.setAttribute('allowfullscreen', 0);
-            content1.setAttribute('src', content[x].data);
+            content1 = document.createElement('div');
+            content1.setAttribute('class', 'iframe');
+            video = document.createElement('iframe');
+            video.setAttribute('frameborder', 0);
+            video.setAttribute('allowfullscreen', 0);
+            video.setAttribute('src', content[x].data);
+            content1.appendChild(video);
             break;
           case 'text':
             content1 = document.createElement('p');
