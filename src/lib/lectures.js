@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 /* eslint-disable func-names */
 import { empty } from './helpers';
 
@@ -65,8 +64,6 @@ function createMain(data) {
       const efni = document.querySelector('.efni');
       for (let x = 0; i < data.lectures.length; x += 1) {
         const content = data.lectures[i].content; /* eslint-disable-line */
-        const divv = document.createElement('div'); // BREYTA
-        divv.setAttribute('class', 'lectures__main'); // redda þessu
         let content1 = '';
         let cdlist = '';
         let cid = '';
@@ -94,8 +91,7 @@ function createMain(data) {
             break;
           case 'list':
             content1 = document.createElement('ul');
-            // eslint-disable-next-line guard-for-in
-            for (const l in content[x].data) {
+            for (let l = 0; l < content[x].data.length; l += 1) {
               cdlist = document.createElement('li');
               const cd = document.createTextNode(content[x].data[l]);
               cdlist.appendChild(cd);

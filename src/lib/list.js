@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import { empty } from './helpers';
 
 export default class List {
@@ -8,19 +9,18 @@ export default class List {
   }
 
   loadLectures() {
+    // eslint-disable-next-line no-var
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var myArr = JSON.parse(this.responseText);
-            console.log(myArr['lectures']);
-            add(myArr);
-        }
+    xhttp.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        const myArr = JSON.parse(this.responseText);
+        console.log(myArr.lectures);  /* eslint-disable-line */
+        add(myArr);  /* eslint-disable-line */
+      }
     };
-    xhttp.open("GET", this.url, true);
+    xhttp.open('GET', this.url, true);
     xhttp.send();
-    
-}
-
+  }
 
   load() {
     empty(this.container);
