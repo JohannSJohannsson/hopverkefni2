@@ -2,6 +2,7 @@
 import { empty } from './helpers';
 
 function add(data) {
+  let checkmerki = localStorage.getItem('check')
   for (let i = 0; i < data.lectures.length; i += 1) {
     const row = document.querySelector('.lectures__row');
     const col = document.createElement('div');
@@ -19,6 +20,8 @@ function add(data) {
 
     const banner = document.createElement('div');
     banner.setAttribute('class', 'lectures__banner');
+    const txtbox = document.createElement('div');
+    txtbox.setAttribute('class', 'lectures__txtbox');
     const chapter = document.createElement('p');
     chapter.setAttribute('class', 'lectures__chapter');
     const cat = document.createTextNode(data.lectures[i].category);
@@ -32,8 +35,9 @@ function add(data) {
     link.appendChild(image);
     image.appendChild(img);
     link.appendChild(banner);
-    banner.appendChild(chapter);
-    banner.appendChild(title);
+    banner.appendChild(txtbox);
+    txtbox.appendChild(chapter);
+    txtbox.appendChild(title);
   }
 }
 
