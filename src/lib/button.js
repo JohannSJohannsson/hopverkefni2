@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 function AddClass(element) {
   const k = document.querySelectorAll(`.${element}`);
   for (let i = 0; i < k.length; i += 1) {
@@ -9,6 +10,13 @@ function RemoveClass(element) {
   const k = document.querySelectorAll(`.${element}`);
   for (let i = 0; i < k.length; i += 1) {
     k[i].classList.remove('valid');
+  }
+}
+
+function AddToAll() {
+  const k = document.querySelectorAll('.lectures__col');
+  for (let i = 0; i < k.length; i += 1) {
+    k[i].classList.add('valid');
   }
 }
 
@@ -30,6 +38,9 @@ export default class Buttons {
           btns[i].classList.remove('active');
           values[btnid] = false;
           RemoveClass(btnid);
+          if (values.html === false && values.css === false && values.javascript === false) {
+            AddToAll();
+          }
         }
       });
     }
