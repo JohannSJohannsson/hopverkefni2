@@ -86,24 +86,24 @@ function createMain(data) {
           case 'text':
             content1 = document.createElement('div');
             content1.setAttribute('class', 'efni__texti');
-            txt = (content[x].data).split("\n");
+            txt = (content[x].data).split('\n');
             console.log(txt);
-            for(let i = 0; i < txt.length; i += 1) {
-              if(txt[i].length > 0) {
+            for(let j = 0; j < txt.length; j += 1) {
+              if(txt[j].length > 0) {
                 content2 = document.createElement('p');
                 content2.setAttribute('class', 'texti');
                 content1.appendChild(content2);
-                cid = document.createTextNode(txt[i]);
+                cid = document.createTextNode(txt[j]);
                 content2.appendChild(cid);
               }
             }
-            
+
             break;
           case 'quote':
             content1 = document.createElement('blockquote');
             content1.setAttribute('class', 'efni__bquote');
             cid = document.createTextNode(content[x].data);
-            if(content[x].attribute) {
+            if (content[x].attribute) {
               cattr = document.createElement('cite');
               cattr.setAttribute('class', 'efni__bquote__cite')
               content1.appendChild(cid);
@@ -137,7 +137,7 @@ function createMain(data) {
             content2 = document.createElement('img');
             content2.setAttribute('src', content[x].data);
             content1.appendChild(content2);
-            if(content[x].caption) {
+            if (content[x].caption) {
               caption = document.createElement('figcaption');
               caption.setAttribute('class', 'efni__img__caption')
               content1.appendChild(caption);
