@@ -89,11 +89,13 @@ function createMain(data) {
             txt = (content[x].data).split("\n");
             console.log(txt);
             for(let i = 0; i < txt.length; i += 1) {
-              content2 = document.createElement('p');
-              content2.setAttribute('class', 'texti');
-              content1.appendChild(content2);
-              cid = document.createTextNode(txt[i]);
-              content2.appendChild(cid);
+              if(txt[i].length > 0) {
+                content2 = document.createElement('p');
+                content2.setAttribute('class', 'texti');
+                content1.appendChild(content2);
+                cid = document.createTextNode(txt[i]);
+                content2.appendChild(cid);
+              }
             }
             
             break;
