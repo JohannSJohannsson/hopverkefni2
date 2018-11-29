@@ -35,4 +35,8 @@
 
 .active {
   background-color: $color-5;
+
+  &:hover {
+    background-color: $color-6;
+  }
 }

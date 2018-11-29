@@ -32,7 +32,7 @@ function add(data) {
   for (let i = 0; i < data.lectures.length; i += 1) {
     const row = document.querySelector('.lectures__row');
     const col = document.createElement('div');
-    col.setAttribute('class', 'lectures__col');
+    col.setAttribute('class', `lectures__col ${data.lectures[i].category}`);
     const link = document.createElement('a');
     link.setAttribute('href', `fyrirlestur.html?slug=${data.lectures[i].slug}`);
     const image = document.createElement('div');

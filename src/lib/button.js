@@ -1,12 +1,20 @@
-import { empty } from './helpers';
+function AddClass(element) {
+  const k = document.querySelectorAll(`.${element}`);
+  for (let i = 0; i < k.length; i += 1) {
+    k[i].classList.add('valid');
+  }
+}
+
+function RemoveClass(element) {
+  const k = document.querySelectorAll(`.${element}`);
+  for (let i = 0; i < k.length; i += 1) {
+    k[i].classList.remove('valid');
+  }
+}
 
 export default class Buttons {
-  load() {
-    empty(this.container);
-  }
-
   createButtoncolor() {
-    const values = JSON.parse('{"HTML":false, "CSS":false, "JavaScript":false}');
+    const values = JSON.parse('{"html":false, "css":false, "javascript":false}');
     const btnContainer = document.querySelector('.section__button');
     const btns = btnContainer.querySelectorAll('button');
     for (let i = 0; i < btns.length; i += 1) {
@@ -16,12 +24,12 @@ export default class Buttons {
           console.log(values[btnid]);
           btns[i].classList.add('active');
           values[btnid] = true;
-          // AddClass(btnid, 'show');
+          AddClass(btnid);
         } else if (values[btnid] === true) {
           console.log(values[btnid]);
           btns[i].classList.remove('active');
           values[btnid] = false;
-          // RemoveClass(btnid, 'show');
+          RemoveClass(btnid);
         }
       });
     }
