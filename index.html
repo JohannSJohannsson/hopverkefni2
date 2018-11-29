@@ -22,9 +22,9 @@
         <div class="section__col">
           <div class="section__content">
             <div class="section__button">
-              <button class="button">HTML</button>
-              <button class="button">CSS</button>
-              <button class="button">JavaScript</button>
+              <button class="button" id = "HTML">HTML</button>
+              <button class="button" id = "CSS">CSS</button>
+              <button class="button" id = "JavaScript">JavaScript</button>
             </div>
           </div>
         </div>
@@ -33,6 +33,28 @@
             </div>
         </div>
       </section>
+
+      <script>
+           const values = JSON.parse('{"html":false, "css":false, "javascript":false}');
+    const btnContainer = document.querySelector('.section__button');
+    const btns = btnContainer.querySelectorAll('button');
+    for (let i = 0; i < btns.length; i += 1) {
+      const btnid = btns[i].getAttribute('id');
+      btns[i].addEventListener('click', () => {
+        if (values[btnid] === false) {
+          console.log(values[btnid]);
+          btns[i].classList.add('active');
+          values[btnid] = true;
+          // AddClass(btnid, 'show');
+        } else if (values[btnid] === true) {
+          console.log(values[btnid]);
+          btns[i].classList.remove('active');
+          values[btnid] = false;
+          // RemoveClass(btnid, 'show');
+        }
+      });
+    }
+      </script>
     </main>
     <script type="module" src="./dist/bundle.js"></script>
 </body>

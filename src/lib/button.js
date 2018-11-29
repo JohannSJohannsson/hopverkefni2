@@ -1,24 +1,29 @@
 import { empty } from './helpers';
 
 export default class Buttons {
-  createButtoncolor() {
-    const button = document.querySelector('button');
-    let nidri = false;
-    button.addEventListener('mousedown', (event) => {
-      if (event.button === 0) {
-        if (nidri === false) {
-          button.setAttribute('style', 'background-color: #2d2');
-          nidri = true;
-        } else if (nidri === true) {
-          button.setAttribute('style', 'background-color: #ccc');
-          nidri = false;
-        }
-      }
-      console.log(nidri);
-    });
-  }
-
   load() {
     empty(this.container);
+  }
+
+  createButtoncolor() {
+    const values = JSON.parse('{"HTML":false, "CSS":false, "JavaScript":false}');
+    const btnContainer = document.querySelector('.section__button');
+    const btns = btnContainer.querySelectorAll('button');
+    for (let i = 0; i < btns.length; i += 1) {
+      const btnid = btns[i].getAttribute('id');
+      btns[i].addEventListener('click', () => {
+        if (values[btnid] === false) {
+          console.log(values[btnid]);
+          btns[i].classList.add('active');
+          values[btnid] = true;
+          // AddClass(btnid, 'show');
+        } else if (values[btnid] === true) {
+          console.log(values[btnid]);
+          btns[i].classList.remove('active');
+          values[btnid] = false;
+          // RemoveClass(btnid, 'show');
+        }
+      });
+    }
   }
 }
