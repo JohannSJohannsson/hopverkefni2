@@ -88,12 +88,14 @@ function createMain(data) {
             content1.setAttribute('class', 'efni__texti');
             txt = (content[x].data).split('\n');
             console.log(txt);
-            for (let j = 0; j < txt.length; j += 1) {
-              content2 = document.createElement('p');
-              content2.setAttribute('class', 'texti');
-              content1.appendChild(content2);
-              cid = document.createTextNode(txt[j]);
-              content2.appendChild(cid);
+            for(let j = 0; j < txt.length; j += 1) {
+              if(txt[j].length > 0) {
+                content2 = document.createElement('p');
+                content2.setAttribute('class', 'texti');
+                content1.appendChild(content2);
+                cid = document.createTextNode(txt[j]);
+                content2.appendChild(cid);
+              }
             }
 
             break;
