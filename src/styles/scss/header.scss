@@ -1,6 +1,6 @@
 @import "../config";
 
-.header { /* stylelint-disable-line */
+.header {
   display: flex;
   height: 20vw;
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@
   }
 }
 
-.fheader { /* stylelint-disable-line */
+.fheader {
   display: flex;
   height: 20vw;
   margin-bottom: $gutter * 2;

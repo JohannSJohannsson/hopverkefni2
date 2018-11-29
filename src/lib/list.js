@@ -2,11 +2,10 @@
 import { empty } from './helpers';
 
 function add(data) {
-  let checkmerki = localStorage.getItem('check')
+  const checkmerki = localStorage.getItem('check');
   for (let i = 0; i < data.lectures.length; i += 1) {
     const row = document.querySelector('.lectures__row');
     const col = document.createElement('div');
-    // eslint-disable-next-line no-useless-concat
     col.setAttribute('class', `lectures__col ${data.lectures[i].category}` + ' valid');
     const link = document.createElement('a');
     link.setAttribute('href', `fyrirlestur.html?slug=${data.lectures[i].slug}`);
@@ -35,22 +34,20 @@ function add(data) {
     link.appendChild(image);
     image.appendChild(img);
     link.appendChild(banner);
-    banner.appendChild(chapter);
-    banner.appendChild(title);
     banner.appendChild(txtbox);
     txtbox.appendChild(chapter);
     txtbox.appendChild(title);
 
-    const checkmerki = localStorage.getItem('check');
-
-    const splitt = checkmerki.split(',');
-    for (let x = 0; x < splitt.length; x += 1) {
-      if (splitt[x] === data.lectures[i].slug) {
-        const merki = document.createElement('p');
-        merki.setAttribute('class', 'merki');
-        const merkiTxt = document.createTextNode('CHECK');
-        merki.appendChild(merkiTxt);
-        banner.appendChild(merki);
+    if (localStorage.getItem('check')) {
+      const splitt = checkmerki.split(',');
+      for (let x = 0; x < splitt.length; x += 1) {
+        if (splitt[x] === data.lectures[i].slug) {
+          const merki = document.createElement('p');
+          merki.setAttribute('class', 'merki');
+          const merkiTxt = document.createTextNode('✓');
+          merki.appendChild(merkiTxt);
+          banner.appendChild(merki);
+        }
       }
     }
   }

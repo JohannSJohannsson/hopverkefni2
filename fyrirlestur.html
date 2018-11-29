@@ -24,34 +24,51 @@
   </main>
   <footer>
     <div class= "fotur">
-      <button class = "klara" id = "takki">Klára fyrirlestur</button>
+      <button class = "klara" id = "green">Klára fyrirlestur</button>
       <a href = "index.html">Til baka</a>
     </div>
   </footer>
   <script>
-      const a = document.querySelector('.klara');
-      let b = false;
-      const url = `${window.location.search}`;
-      const slug = url.substring(1);
-      let str = '';
-      let ble = '';
-      console.log(slug);
-      document.getElementById('takki').addEventListener('click', () => {
-        const text = document.getElementById('takki').firstChild;
-        text.data = text.data == "Klára fyrirlestur" ? "✓ Fyrirlestur kláraður" : "Klára fyrirlestur";
-        if (b === false){
-          a.classList.add('graenn');
-          b = true;
-          str = JSON.stringify(slug);
-          ble = localStorage.setItem('slug', str);
-          sjoppa = localStorage.getItem('slug');
-          console.log(sjoppa);
+    const url = `${window.location.search}`;
+    const slug = url.substring(1);
+    const takki = document.querySelector('.klara');
+    const clist = [];
+    let exist = false;
+    let graenn = false;
+
+    takki.addEventListener('click', () => {
+      const text = document.getElementById('green').firstChild;
+      text.data = text.data === 'Klára fyrirlestur' ? '✓ Fyrirlestur kláraður' : 'Klára fyrirlestur';
+      if (graenn === false) {
+        takki.classList.add('graenn');
+        graenn = true;
+      } else if (graenn === true) {
+        takki.classList.remove('graenn');
+        graenn = false;
+      }
+      const OldCheck = localStorage.getItem('check');
+      localStorage.setItem('check', JSON.stringify(clist));
+
+      const checkList = JSON.parse(localStorage.getItem('check'));
+      const s = slug.split('=');
+      checkList.push(`${OldCheck},${s[1]}`);
+
+      localStorage.setItem('check', checkList);
+
+      const splitt = OldCheck.split(',');
+      for (let x = 0; x < splitt.length; x += 1) {
+        if (splitt[x] === s[1]) {
+          exist = true;
+        } else {
+          exist = false;
         }
-        else{
-          a.classList.remove('graenn');
-          b = false;
-        }
-      });
+      }
+      if (exist) {
+        checkList.push(OldCheck);
+      } else {
+        // empty
+      }
+    });
   </script>
   <script type="module" src="./dist/bundle.js"></script>
 </body>
