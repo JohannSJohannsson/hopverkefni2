@@ -49,7 +49,6 @@ export default class List {
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const myArr = JSON.parse(this.responseText);
-        console.log(myArr.lectures);
         add(myArr);
       }
     };

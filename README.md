@@ -1,13 +1,19 @@
 # Hópverkefni 2
+* Upplýsingar um hvernig keyra skuli verkefnið
+* Lýsingu á uppsetningu verkefnis, hvernig því er skipt í möppur, hvernig CSS og JavaScript er skipulagt og fleira sem á við
+* Upplýsingar um alla sem unnu verkefni
+* Leyfilegt er að halda eftir þessari verkefnalýsingu en hún skal þá koma _á eftir_ ykkar lýsingu
 
-# Hvernig keyra skal verkefnið:
+## Hvernig keyra skal verkefnið:
 
 * Fyrst skal gengið úr skugga um að git sé installað í tölvunni.
 
-* Næst skal gera nýtt local repository með því að búa til nýja möppu, opna git í þeirri möppu og skrifa inn skipunina "git clone" og vísa í eftirfarandi slóð: 
+* Næst skal gera nýtt local repository með því að búa til nýja möppu, opna git í þeirri möppu og skrifa inn skipunina "git init" og því næst "git clone" og vísa í  eftirfarandi slóð: 
     
     ```bash
     https://github.com/JohannSJohannsson/hopverkefni2
+
+Það virkar líka yfirleitt að gera "git clone" fyrst án þess að hafa gert "git init".
 
 * Þá skal opna möppuna inni í Visual studio code eða öðru svipuðu forriti.
 
@@ -29,6 +35,53 @@
     ```bash
     npm test -s
 
+## Lýsing
+
+* Verkefnið er allt geymt inni í möppu sem ber heitið "hopverkefni2" og inni í henni eru eftirfarandi skrár:
+     ```bash
+     Mikilvægar skrár:
+     
+     index.html
+     fyrirlestur.html
+     grid.css
+     README.md
+     lectures.json
+     package.json
+     package-lock.json
+
+     Möppur:
+     dist
+     src
+     img
+     
+     Hjálpar skrár:
+
+     .editorconfig
+     .eslintrv.js
+     .gitattributes
+     .gitignore
+     .stylelintrc
+     babel.config.js
+     rollup.config.js
+
+     Möppur:
+     node_modules
+     utlit
+
+* Inni í dist möppunni má finna bundle.js og styles.css. Í bundle.js hefur babel sameinað allar javascript skipanirnar okkar sameinast úr möppunni /src/lib í eitt .js skjal og keyrir verkefnið. Sama má segja um styles.css skjalið en þar sameinar sass allar scss skrár úr /src/styles í eitt .css skjal.
+
+* Í img möppu má finna myndirnar sem eru á síðunum.
+
+* Við gerðum verkefnið þannig að við bjuggum til javascript skipanir sem búa til html eða verka á html-ið og þegar það virkaði þá bjuggum við til css fyrir það efni. Þá skipulögðum við hvaða element myndi þurfa sér .js skrá eða sér .scss skrá með tilliti til hvernig það element þurfti að haga sér. Við reyndum að hafa það þannig að stórir hlutir verkefnisins, t.d. takkarnir eða lectures síðurnar fengu sér css og .js skrá svo hægt sé að hafa betri yfirsýn yfir verkefnið og auðveldara að lagfæra.
+
+## Upplýsingar um þá sem unnu að verkefninu
+
+* Arnþór Guðmundsson - arg49
+* Jóhann Sigurður Jóhannsson - jsj13
+* Páll Andri Sveinsson - pas222
+* Sölvi Hrafn Sveinsson - shs29 
+
+Jóhann sá um skipulagningu og uppsetningu til að byrja með, svo tók Arnþór við og gerði forsíðu að miklu leiti tilbúna og svo unnu Jóhann og Arnþór saman að mestu leiti tveir. Sá sem skrifar þetta README skjal er Jóhann.
 
 # Verkefnalýsing frá kennara:
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
