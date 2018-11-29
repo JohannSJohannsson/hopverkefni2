@@ -1,8 +1,4 @@
 # Hópverkefni 2
-* Upplýsingar um hvernig keyra skuli verkefnið
-* Lýsingu á uppsetningu verkefnis, hvernig því er skipt í möppur, hvernig CSS og JavaScript er skipulagt og fleira sem á við
-* Upplýsingar um alla sem unnu verkefni
-* Leyfilegt er að halda eftir þessari verkefnalýsingu en hún skal þá koma _á eftir_ ykkar lýsingu
 
 ## Hvernig keyra skal verkefnið:
 
