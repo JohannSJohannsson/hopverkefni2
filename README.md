@@ -81,7 +81,7 @@
 * Páll Andri Sveinsson - pas222
 * Sölvi Hrafn Sveinsson - shs29 
 
-Jóhann sá um skipulagningu og uppsetningu til að byrja með, svo tók Arnþór við og gerði forsíðu að miklu leiti tilbúna og svo unnu Jóhann og Arnþór saman að mestu leiti tveir. Sá sem skrifar þetta README skjal er Jóhann.
+Jóhann sá um skipulagningu og uppsetningu til að byrja með, svo tók Arnþór við og gerði forsíðu að miklu leiti tilbúna og svo unnu Jóhann og Arnþór saman að helstu virkni síðunar. Sölvi og Páll sáu um takka og fót. Sá sem skrifar þetta README skjal er Jóhann.
 
 # Verkefnalýsing frá kennara:
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
