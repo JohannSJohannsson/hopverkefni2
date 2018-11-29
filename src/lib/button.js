@@ -37,7 +37,7 @@ export default class Buttons {
       const btnid = btns[i].getAttribute('id');
       btns[i].addEventListener('click', () => {
         clicks += 1;
-        console.log(clicks); //eslint-disable-line
+        console.log(clicks);
         if (clicks === 1) {
           RemoveFromAll();
         }

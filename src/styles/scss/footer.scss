@@ -1,13 +1,41 @@
 @import "../config";
 
-footer { /* stylelint-disable-line */
+.fotur {
   padding-top: 40px;
   padding-bottom: 30px;
   line-height: 4em;
   text-align: center;
 }
 
-a { /* stylelint-disable-line */
-  color: #000;
+.fotur a { /* stylelint-disable-line */
+  font-family: $font-main;
+  font-size: 14px;
   text-decoration: none;
+}
+
+.klara {
+  display: flex;
+
+  max-width: 180px;
+  padding: $gutter/2 $gutter*2;
+  margin: auto;
+
+  font-family: $font-main;
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  border: 1px transparent;
+  border-radius: 10px;
+
+  transition:
+    color $transition,
+    background-color $transition,
+    border-color $transition;
 }
