@@ -34,6 +34,19 @@ function add(data) {
     link.appendChild(banner);
     banner.appendChild(chapter);
     banner.appendChild(title);
+
+    const checkmerki = localStorage.getItem('check');
+
+    const splitt = checkmerki.split(',');
+    for (let x = 0; x < splitt.length; x += 1) {
+      if (splitt[x] === data.lectures[i].slug) {
+        const merki = document.createElement('p');
+        merki.setAttribute('class', 'merki');
+        const merkiTxt = document.createTextNode('CHECK');
+        merki.appendChild(merkiTxt);
+        banner.appendChild(merki);
+      }
+    }
   }
 }
 
