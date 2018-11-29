@@ -20,14 +20,27 @@ function AddToAll() {
   }
 }
 
+function RemoveFromAll() {
+  const k = document.querySelectorAll('.lectures__col');
+  for (let i = 0; i < k.length; i += 1) {
+    k[i].classList.remove('valid');
+  }
+}
+
 export default class Buttons {
-  createButtoncolor() {
+  createButtonFunction() {
     const values = JSON.parse('{"html":false, "css":false, "javascript":false}');
     const btnContainer = document.querySelector('.section__button');
     const btns = btnContainer.querySelectorAll('button');
+    let clicks = 0;
     for (let i = 0; i < btns.length; i += 1) {
       const btnid = btns[i].getAttribute('id');
       btns[i].addEventListener('click', () => {
+        clicks += 1;
+        console.log(clicks); //eslint-disable-line
+        if (clicks === 1) {
+          RemoveFromAll();
+        }
         if (values[btnid] === false) {
           console.log(values[btnid]);
           btns[i].classList.add('active');
@@ -40,6 +53,7 @@ export default class Buttons {
           RemoveClass(btnid);
           if (values.html === false && values.css === false && values.javascript === false) {
             AddToAll();
+            clicks = 0;
           }
         }
       });

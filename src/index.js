@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     const list = new List();
     const button = new Buttons();
-    button.createButtoncolor();
+    button.createButtonFunction();
     list.load();
   }
 });
