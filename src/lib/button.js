@@ -37,17 +37,14 @@ export default class Buttons {
       const btnid = btns[i].getAttribute('id');
       btns[i].addEventListener('click', () => {
         clicks += 1;
-        console.log(clicks);
         if (clicks === 1) {
           RemoveFromAll();
         }
         if (values[btnid] === false) {
-          console.log(values[btnid]);
           btns[i].classList.add('active');
           values[btnid] = true;
           AddClass(btnid);
         } else if (values[btnid] === true) {
-          console.log(values[btnid]);
           btns[i].classList.remove('active');
           values[btnid] = false;
           RemoveClass(btnid);

@@ -24,10 +24,26 @@
   </main>
   <footer>
     <div class= "fotur">
-      <button class = "klara">Klára fyrirlestur</button>
+      <button class = "klara" id = "takki">Klára fyrirlestur</button>
       <a href = "index.html">Til baka</a>
     </div>
   </footer>
+  <script>
+      const a = document.querySelector('.klara');
+      let b = false;
+      document.getElementById('takki').addEventListener('click', () => {
+        const text = document.getElementById('takki').firstChild;
+        text.data = text.data == "Klára fyrirlestur" ? "✓ Fyrirlestur kláraður" : "Klára fyrirlestur";
+        if (b === false){
+          a.classList.add('graenn');
+          b = true;
+        }
+        else{
+          a.classList.remove('graenn');
+          b = false;
+        }
+      });
+  </script>
   <script type="module" src="./dist/bundle.js"></script>
 </body>
 </html>

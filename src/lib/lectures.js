@@ -13,7 +13,6 @@ export default class Lectures {
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         const myArr = JSON.parse(this.responseText);
-        console.log(myArr.lectures);
         createHeader(myArr); /* eslint-disable-line */
         createMain(myArr);  /* eslint-disable-line */
       }
@@ -21,7 +20,6 @@ export default class Lectures {
     xhttp.open('GET', this.url, true);
     xhttp.send();
   }
-
 
   load() {
     empty(this.container);
@@ -87,9 +85,8 @@ function createMain(data) {
             content1 = document.createElement('div');
             content1.setAttribute('class', 'efni__texti');
             txt = (content[x].data).split('\n');
-            console.log(txt);
-            for(let j = 0; j < txt.length; j += 1) {
-              if(txt[j].length > 0) {
+            for (let j = 0; j < txt.length; j += 1) {
+              if (txt[j].length > 0) {
                 content2 = document.createElement('p');
                 content2.setAttribute('class', 'texti');
                 content1.appendChild(content2);
@@ -97,7 +94,6 @@ function createMain(data) {
                 content2.appendChild(cid);
               }
             }
-
             break;
           case 'quote':
             content1 = document.createElement('blockquote');
@@ -105,9 +101,9 @@ function createMain(data) {
             cid = document.createTextNode(content[x].data);
             if (content[x].attribute) {
               cattr = document.createElement('cite');
-              cattr.setAttribute('class', 'efni__bquote__cite')
+              cattr.setAttribute('class', 'efni__bquote__cite');
               content1.appendChild(cid);
-              content1.appendChild(document.createElement('br'))
+              content1.appendChild(document.createElement('br'));
               content1.appendChild(cattr);
               cattr.appendChild(document.createTextNode(content[x].attribute));
             } else {
@@ -116,16 +112,16 @@ function createMain(data) {
             break;
           case 'heading':
             content1 = document.createElement('h2');
-            content1.setAttribute('class', 'efni__heading')
+            content1.setAttribute('class', 'efni__heading');
             cid = document.createTextNode(content[x].data);
             content1.appendChild(cid);
             break;
           case 'list':
             content1 = document.createElement('ul');
-            content1.setAttribute('class', 'efni__list')
+            content1.setAttribute('class', 'efni__list');
             for (let l = 0; l < content[x].data.length; l += 1) {
               cdlist = document.createElement('li');
-              cdlist.setAttribute('class', 'efni__list__link')
+              cdlist.setAttribute('class', 'efni__list__link');
               const cd = document.createTextNode(content[x].data[l]);
               cdlist.appendChild(cd);
               content1.appendChild(cdlist);
@@ -133,13 +129,13 @@ function createMain(data) {
             break;
           case 'image':
             content1 = document.createElement('div');
-            content1.setAttribute('class', 'efni__img')
+            content1.setAttribute('class', 'efni__img');
             content2 = document.createElement('img');
             content2.setAttribute('src', content[x].data);
             content1.appendChild(content2);
             if (content[x].caption) {
               caption = document.createElement('figcaption');
-              caption.setAttribute('class', 'efni__img__caption')
+              caption.setAttribute('class', 'efni__img__caption');
               content1.appendChild(caption);
               caption.appendChild(document.createTextNode(content[x].caption));
             }
@@ -147,7 +143,7 @@ function createMain(data) {
             break;
           case 'code':
             content1 = document.createElement('code');
-            content1.setAttribute('class', 'efni__code')
+            content1.setAttribute('class', 'efni__code');
             cid = document.createTextNode(content[x].data);
             content1.appendChild(cid);
             break;

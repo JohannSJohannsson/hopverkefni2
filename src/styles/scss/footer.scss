@@ -16,7 +16,7 @@
 .klara {
   display: flex;
 
-  max-width: 180px;
+  max-width: 240px;
   padding: $gutter/2 $gutter*2;
   margin: auto;
 
@@ -38,4 +38,9 @@
     color $transition,
     background-color $transition,
     border-color $transition;
+}
+
+.graenn {
+  padding: $gutter/2 $gutter*1.35;
+  color: $color-6;
 }
