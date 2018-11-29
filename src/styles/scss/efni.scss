@@ -9,13 +9,14 @@
   font-weight: 400;
 
   @media (min-width: 1000px) {
-    width: 67.6666%;
+    width: 67.8%;
     margin-right: auto;
     margin-left: auto;
   }
 
   &__heading {
     padding-top: $gutter*2;
+    font-family: $font-head;
   }
 
   &__texti {

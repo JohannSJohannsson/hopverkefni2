@@ -59,6 +59,16 @@
     padding-left: $gutter/2;
     flex-direction: column;
 
+    &:hover {
+      .lectures__banner {
+        background-color: $color-2;
+      }
+
+      .lectures__image {
+        background-color: $color-2;
+      }
+    }
+
     @media (min-width: 500px) {
       width: 50%;
       justify-content: flex-end;
@@ -73,12 +83,20 @@
     height: 100%;
     margin-bottom: -4px;
     background: $color-4;
+    transition:
+      color $transition,
+      background-color $transition,
+      border-color $transition;
   }
 
   &__banner {
     font-family: $font-head;
     color: #000;
     background: $color-4;
+    transition:
+      color $transition,
+      background-color $transition,
+      border-color $transition;
   }
 
   &__chapter {
